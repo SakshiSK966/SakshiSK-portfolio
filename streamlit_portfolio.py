@@ -232,7 +232,7 @@ elif page == "Projects":
             "description": "Developed a web-based park surveillance system using machine learning for activity monitoring and basic anomaly detection, with an interactive dashboard for visualization.",
             "technologies": ["Python", "Machine Learning", "OpenCV", "Streamlit"],
             "link": "https://github.com/Springboard-Internship-2025/AI-Based-Intel-Video-Surv-Platform-for-Activity-Recognition-and-Sec-Mgt-in-Parks_Nov_Batch-6_2025/tree/SakshiSK966",
-            "image_url": "https://share.google/images/tcmgnZHB7wY3iUFDt"
+            "image_url": "https://www.freepik.com/free-vector/isometric-public-security-composition-street-scenery-with-walking-people-person-having-his-face-recognized_17102695.htm#fromView=keyword&page=1&position=3&uuid=af321a7c-256f-48b5-b7c8-1a1fc0b84349&query=Security+camera+cityscape"
         },
         {
             "title": "Project 2: AI Powered Research Assistant",
