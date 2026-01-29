@@ -36,7 +36,7 @@ def get_base64_image(image_path):
 
 # ============== IMPORTANT: Set your image filename here ==============
 # Change 'Background.jpg' to your actual image filename
-IMAGE_FILENAME = r"C:\Users\saksh\OneDrive\Desktop\Portfolio\Background.jpg"  # ← UPDATE THIS WITH YOUR IMAGE NAME
+IMAGE_FILENAME = "Images/Background.jpg"  # ← UPDATE THIS WITH YOUR IMAGE NAME
 # ====================================================================
 
 # Get base64 of background image
@@ -242,14 +242,14 @@ elif page == "Projects":
             "description": "Developed a web-based park surveillance system using machine learning for activity monitoring and basic anomaly detection, with an interactive dashboard for visualization.",
             "technologies": ["Python", "Machine Learning", "OpenCV", "Streamlit"],
             "link": "https://github.com/Springboard-Internship-2025/AI-Based-Intel-Video-Surv-Platform-for-Activity-Recognition-and-Sec-Mgt-in-Parks_Nov_Batch-6_2025/tree/SakshiSK966",
-            "image_url": "C:\\Users\\saksh\\OneDrive\\Desktop\\Portfolio\\Park.png"
+            "image_url": "Images/Park.png"
         },
         {
             "title": "Project 2: AI Powered Research Assistant",
             "description": "Built an AI-powered research assistant to fetch, analyze, and summarize information using large language models, providing an interactive interface for efficient research workflows.",
             "technologies": ["Python", "LangChain", "Streamlit", "Hugging Face", "APIs"],
             "link": "https://github.com/SakshiSK966/AI-powered-Research-Assistant",
-            "image_url": "C:\\Users\\saksh\\OneDrive\\Desktop\\Portfolio\\Research.png"
+            "image_url": "Images/Research.png"
         }
     ]
     
