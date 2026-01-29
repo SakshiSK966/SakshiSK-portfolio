@@ -242,7 +242,7 @@ elif page == "Projects":
             "description": "Developed a web-based park surveillance system using machine learning for activity monitoring and basic anomaly detection, with an interactive dashboard for visualization.",
             "technologies": ["Python", "Machine Learning", "OpenCV", "Streamlit"],
             "link": "https://github.com/Springboard-Internship-2025/AI-Based-Intel-Video-Surv-Platform-for-Activity-Recognition-and-Sec-Mgt-in-Parks_Nov_Batch-6_2025/tree/SakshiSK966",
-            "image_url": "https://images.unsplash.com/photo-1555066931-bf19f8fd1085?w=500&h=500&fit=crop"
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0A31DNMIqpK9SDween4l6C_uNP4Yf_Qy7t6A8l7O0okOX77UknQxZV_cZ6pt126oLg_g&usqp=CAU"
         },
         {
             "title": "Project 2: AI Powered Research Assistant",
