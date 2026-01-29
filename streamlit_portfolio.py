@@ -36,7 +36,7 @@ def get_base64_image(image_path):
 
 # ============== IMPORTANT: Set your image filename here ==============
 # Change 'Background.jpg' to your actual image filename
-IMAGE_FILENAME = "https://bhullarinfotech.com/wp-content/uploads/2023/02/portfolio-ten-1-3.jpg"  # ← UPDATE THIS WITH YOUR IMAGE NAME
+IMAGE_FILENAME = r"C:\Users\saksh\OneDrive\Desktop\Portfolio\Background.jpg"  # ← UPDATE THIS WITH YOUR IMAGE NAME
 # ====================================================================
 
 # Get base64 of background image
@@ -50,22 +50,136 @@ else:
 
 # Custom CSS for better styling with background image - WHITE TEXT VERSION
 st.markdown(f"""
-<style>
+    <style>
+    /* Background styling */
     .stApp {{
         {bg_style}
     }}
-    .main {{
-        background-color: rgba(0, 0, 0, 0.7);
-        border-radius: 10px;
-        padding: 20px;
+    
+    /* Dark overlay for better text readability */
+    [data-testid="stAppViewContainer"] {{
+        background-color: rgba(0, 0, 0, 0.65);
     }}
-    .stMarkdown, .stWrite, h1, h2, h3, .stInfo {{
+    
+    /* Main content area - semi-transparent white */
+    .main {{ 
+        padding: 2rem;
+        background-color: rgba(255, 255, 255, 0.97);
+        border-radius: 15px;
+        margin: 2rem;
+    }}
+    
+    /* ALL TEXT - WHITE COLOR */
+    body, p, div, span, li {{
         color: white !important;
     }}
-    .stDivider {{
-        background-color: rgba(255, 255, 255, 0.3) !important;
+    
+    /* Headings - White */
+    h1, h2, h3, h4, h5, h6 {{
+        color: white !important;
+        font-weight: 600;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     }}
-</style>
+    
+    /* Input and Text areas - Dark background with dark text */
+    input, textarea {{
+        color: #333 !important;
+        background-color: white !important;
+    }}
+    
+    .stTextInput label, .stTextArea label, .stSelectbox label {{
+        color: white !important;
+    }}
+    
+    /* Info boxes - White text */
+    .stInfo, .stWarning, .stError, .stSuccess {{
+        color: white !important;
+    }}
+    
+    .stInfo {{
+        background-color: rgba(25, 118, 210, 0.3) !important;
+        border-color: rgba(25, 118, 210, 0.6) !important;
+    }}
+    
+    .highlight {{ 
+        color: #64d5ff; 
+        font-weight: bold; 
+    }}
+    
+    .project-card {{ 
+        background-color: rgba(240, 242, 246, 0.95); 
+        padding: 1.5rem; 
+        border-radius: 10px; 
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        border-left: 5px solid #1f77b4;
+        color: #333;
+    }}
+    
+    .skill-badge {{
+        display: inline-block;
+        background: linear-gradient(135deg, #1f77b4 0%, #164a7f 100%);
+        color: white;
+        padding: 0.6rem 1.2rem;
+        border-radius: 25px;
+        margin: 0.4rem;
+        font-size: 0.9rem;
+        box-shadow: 0 4px 12px rgba(31, 119, 180, 0.3);
+        font-weight: 500;
+    }}
+    
+    /* Sidebar styling */
+    [data-testid="stSidebar"] {{
+        background: linear-gradient(180deg, rgba(31, 119, 180, 0.95) 0%, rgba(31, 119, 180, 0.85) 100%);
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    }}
+    
+    [data-testid="stSidebar"] * {{
+        color: white !important;
+    }}
+    
+    /* Buttons */
+    .stButton > button {{
+        background-color: #1f77b4;
+        color: white;
+        border-radius: 8px;
+        border: none;
+        padding: 0.6rem 1.5rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }}
+    
+    .stButton > button:hover {{
+        background-color: #164a7f;
+        box-shadow: 0 4px 12px rgba(31, 119, 180, 0.4);
+        transform: translateY(-2px);
+    }}
+    
+    /* Links - Light blue */
+    a {{
+        color: #64d5ff !important;
+        text-decoration: none;
+    }}
+    
+    a:hover {{
+        color: #ff6b6b !important;
+    }}
+    
+    /* Divider */
+    hr {{
+        border-color: rgba(255, 255, 255, 0.2) !important;
+    }}
+    
+    /* Radio buttons and checkboxes */
+    .stRadio > label, .stCheckbox > label {{
+        color: white !important;
+    }}
+    
+    /* Form text */
+    .stForm {{
+        color: white !important;
+    }}
+    </style>
 """, unsafe_allow_html=True)
 
 # Sidebar navigation
@@ -80,70 +194,87 @@ with st.sidebar:
 if page == "Home":
     # Center the content
     st.markdown("""
-    <div style="text-align: center; color: white;">
-        <h1>Hi! I'm Sakshi Kotur 👋</h1>
-        <h3>Aspiring Data Scientist | Machine Learning Enthusiast | Python Developer</h3>
-        <p>Welcome to my portfolio! I'm passionate about turning data into actionable insights and building intelligent, real-world solutions using machine learning and analytics.</p>
-        <p>With a strong foundation in Python and hands-on experience in AI and data science projects, I enjoy solving complex problems and creating impactful, data-driven applications.</p>
-    </div>
+        <div style='text-align: center; padding: 4rem 2rem;'>
+            <h1 style='color: white; font-size: 3rem; margin-bottom: 1rem;'>Hi! I'm Sakshi Kotur 👋</h1>
+            <h3 style='color: #64d5ff; font-size: 1.5rem; margin-bottom: 2rem;'>Aspiring Data Scientist | Machine Learning Enthusiast | Python Developer</h3>
+            <p style='color: white; font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto 2rem;'>
+                Welcome to my portfolio! I'm passionate about turning data into actionable insights 
+                and building intelligent, real-world solutions using machine learning and analytics.
+            </p>
+            <p style='color: white; font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto;'>
+                With a strong foundation in Python and hands-on experience in AI and data science projects, 
+                I enjoy solving complex problems and creating impactful, data-driven applications.
+            </p>
+        </div>
     """, unsafe_allow_html=True)
 
 # ============== PAGE: ABOUT ==============
 elif page == "About":
     st.title("About Me")
+    
     col1, col2 = st.columns([2, 1], gap="large")
+    
     with col1:
         st.header("Professional Summary")
         st.write("""
-Aspiring Data Analyst and Data Scientist with a strong foundation in Python, machine learning, and data analysis concepts. Hands-on experience in building AI-driven projects and developing end-to-end solutions using tools such as Pandas, NumPy, Scikit-learn, Streamlit, and FastAPI. Familiar with data cleaning, visualization, and extracting meaningful insights from datasets. A motivated fresher with strong problem-solving skills, a continuous learning mindset, and a passion for applying data science and AI techniques to real-world challenges.
+        Aspiring Data Analyst and Data Scientist with a strong foundation in Python, machine learning, and data analysis concepts. Hands-on experience in building AI-driven projects and developing end-to-end solutions using tools such as Pandas, NumPy, Scikit-learn, Streamlit, and FastAPI. Familiar with data cleaning, visualization, and extracting meaningful insights from datasets. A motivated fresher with strong problem-solving skills, a continuous learning mindset, and a passion for applying data science and AI techniques to real-world challenges.
         """)
+    
     with col2:
         st.header("Quick Facts")
         st.info("""
-📍 Location: Bengaluru, Karnataka
-🎓 Education: B.E in Artificial Intelligence and Data Science from S.G.Balekundri Institute of Technology, Belagavi, CGPA: 8.65
-🌍 Languages: English, Kannada, Hindi
-🎯 Currently: Fresher
+        📍 Location: Bengaluru, Karnataka
+        
+        🎓 Education: B.E in Artificial Intelligence and Data Science from S.G.Balekundri Institute of Technology, Belagavi, CGPA: 8.65
+        
+        🌍 Languages: English, Kannada, Hindi
+        
+        🎯 Currently: Fresher
         """)
 
 # ============== PAGE: PROJECTS ==============
 elif page == "Projects":
     st.title("Projects")
+    
     projects = [
         {
             "title": "Project 1: AI-Based Park Surveillance System",
             "description": "Developed a web-based park surveillance system using machine learning for activity monitoring and basic anomaly detection, with an interactive dashboard for visualization.",
             "technologies": ["Python", "Machine Learning", "OpenCV", "Streamlit"],
             "link": "https://github.com/Springboard-Internship-2025/AI-Based-Intel-Video-Surv-Platform-for-Activity-Recognition-and-Sec-Mgt-in-Parks_Nov_Batch-6_2025/tree/SakshiSK966",
-            "image_url": "https://www.freepik.com/free-vector/isometric-public-security-composition-street-scenery-with-walking-people-person-having-his-face-recognized_17102695.htm#fromView=keyword&page=1&position=3&uuid=af321a7c-256f-48b5-b7c8-1a1fc0b84349&query=Security+camera+cityscape"
+            "image_url": "C:\\Users\\saksh\\OneDrive\\Desktop\\Portfolio\\Park.png"
         },
         {
             "title": "Project 2: AI Powered Research Assistant",
             "description": "Built an AI-powered research assistant to fetch, analyze, and summarize information using large language models, providing an interactive interface for efficient research workflows.",
             "technologies": ["Python", "LangChain", "Streamlit", "Hugging Face", "APIs"],
             "link": "https://github.com/SakshiSK966/AI-powered-Research-Assistant",
-            "image_url": "https://via.placeholder.com/300x200?text=Research+Assistant"  # Using placeholder since local path won't work
+            "image_url": "C:\\Users\\saksh\\OneDrive\\Desktop\\Portfolio\\Research.png"
         }
     ]
-
+    
     for i, project in enumerate(projects):
         with st.container():
             col1, col2 = st.columns([1, 2], gap="large")
+            
             with col1:
                 try:
                     st.image(project["image_url"], width=250)
                 except:
                     st.info("Image not available")
+            
             with col2:
                 st.subheader(project["title"])
                 st.write(project["description"])
+                
                 # Technologies
                 st.write("**Technologies:**")
                 tech_html = " ".join([
-                    f'<span style="background-color: #0066cc; color: white; padding: 5px 10px; border-radius: 5px; margin-right: 5px;">{tech}</span>'
+                    f'<span class="skill-badge">{tech}</span>' 
                     for tech in project["technologies"]
                 ])
                 st.markdown(tech_html, unsafe_allow_html=True)
+                
                 # Links
                 col_link1, col_link2 = st.columns(2)
                 with col_link1:
@@ -154,18 +285,19 @@ elif page == "Projects":
 # ============== PAGE: SKILLS ==============
 elif page == "Skills":
     st.title("Skills & Expertise")
+    
     skills_data = {
         "Programming Languages": ["Python", "SQL"],
         "Data Science & ML": ["Data Analysis & Data Cleaning", "Machine Learning Fundamentals", "Exploratory Data Analysis (EDA)", "Data Visualization"],
         "Tools & Libraries": ["Pandas", "NumPy", "Scikit-learn", "TensorFlow", "Streamlit"],
-        "Databases": ["MySQL", "PostgreSQL", "SQLite", "MongoDB (basic)"],
+        "Databases": ["MySQL" ,"PostgreSQL", "SQLite", "MongoDB (basic)"],
         "Other": ["Git & GitHub", "Statistics for Data Science", "Problem Solving & Analytical Thinking"]
     }
-
+    
     for category, skills in skills_data.items():
         st.subheader(category)
         skill_html = " ".join([
-            f'<span style="background-color: #28a745; color: white; padding: 5px 10px; border-radius: 5px; margin-right: 5px;">{skill}</span>'
+            f'<span class="skill-badge">{skill}</span>' 
             for skill in skills
         ])
         st.markdown(skill_html, unsafe_allow_html=True)
@@ -174,21 +306,22 @@ elif page == "Skills":
 # ============== PAGE: EXPERIENCE ==============
 elif page == "Experience":
     st.title("Work Experience")
+    
     experiences = [
         {
             "title": "Artificial Intelligence Intern",
             "company": "Infosys Springboard 6.0",
-            "duration": "Nov 27, 2025 - Jan 21, 2026",
+            "duration": "Nov 27,2025 - Jan 21,2026",
             "description": "Developed an AI-powered park surveillance web application integrating machine learning for activity monitoring and basic anomaly detection. Built an interactive web interface to visualize surveillance insights and improve safety analysis."
         },
         {
             "title": "Data Science Intern",
-            "company": "Echo Brains (A Dextris Company), Bengaluru",
-            "duration": "Jan 27, 2026 - Present",
+            "company": "Echo Brains(A Dextris Company), Bengaluru",
+            "duration": "Jan 27,2026 - Present",
             "description": "Assisted in understanding data science and NLP workflows, including data preprocessing and basic text analysis techniques. Gained hands-on exposure to industry tools, collaborative development practices, and real-world data science use cases."
         }
     ]
-
+    
     for i, exp in enumerate(experiences):
         with st.container():
             st.subheader(exp["title"])
@@ -204,29 +337,37 @@ elif page == "Experience":
 # ============== PAGE: CONTACT ==============
 elif page == "Contact":
     st.title("Get In Touch")
+    
     st.write("I'd love to hear from you! Feel free to reach out through any of these channels:")
+    
     col1, col2, col3 = st.columns(3)
+    
     with col1:
         st.info("""
-📧 **Email**
-sakshikotur19@gmail.com
+        📧 **Email**
+        
+        sakshikotur19@gmail.com
         """)
+    
     with col2:
         st.info("""
-💼 **LinkedIn**
-https://www.linkedin.com/in/sakshi-s-k/
+        💼 **LinkedIn**
+        
+        https://www.linkedin.com/in/sakshi-s-k/
         """)
+    
     with col3:
         st.info("""
-🐙 **GitHub**
-https://github.com/SakshiSK966
+        🐙 **GitHub**
+        
+        https://github.com/SakshiSK966
         """)
-
+   
 # Footer
 st.divider()
 st.markdown("""
-<div style="text-align: center; color: white;">
-    <p>© 2025 Sakshi Kotur. All rights reserved.</p>
-    <p>Built with Streamlit | Last updated: """ + datetime.now().strftime("%B %d, %Y") + """</p>
-</div>
+    <div style='text-align: center; color: white; padding: 2rem; background-color: rgba(0, 0, 0, 0.5); border-radius: 15px; margin: 2rem;'>
+    <p style='font-size: 16px; margin: 0;'>© 2025 Sakshi Kotur. All rights reserved.</p>
+    <p style='font-size: 14px; color: #ccc; margin: 0.5rem 0 0 0;'>Built with Streamlit | Last updated: """ + datetime.now().strftime("%B %d, %Y") + """</p>
+    </div>
 """, unsafe_allow_html=True)
