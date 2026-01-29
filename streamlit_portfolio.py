@@ -249,7 +249,7 @@ elif page == "Projects":
             "description": "Built an AI-powered research assistant to fetch, analyze, and summarize information using large language models, providing an interactive interface for efficient research workflows.",
             "technologies": ["Python", "LangChain", "Streamlit", "Hugging Face", "APIs"],
             "link": "https://github.com/SakshiSK966/AI-powered-Research-Assistant",
-            "image_url": "https://images.unsplash.com/photo-1516534775068-bb57a39cbb28?w=500&h=500&fit=crop"
+            "image_url": "https://static.vecteezy.com/system/resources/thumbnails/050/069/340/large/doctor-working-in-laboratory-doing-research-with-microscope-2d-cartoon-animation-free-video.jpg"
         }
     ]
     
