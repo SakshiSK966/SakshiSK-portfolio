@@ -26,7 +26,7 @@ def get_base64_image(image_path):
 
 # ============== IMPORTANT: Set your image filename here ==============
 # Change 'Background.jpg' to your actual image filename
-IMAGE_FILENAME = r"C:\Users\saksh\OneDrive\Desktop\Portfolio\Background.jpg"  # ← UPDATE THIS WITH YOUR IMAGE NAME
+IMAGE_FILENAME = "https://bhullarinfotech.com/wp-content/uploads/2023/02/portfolio-ten-1-3.jpg"  # ← UPDATE THIS WITH YOUR IMAGE NAME
 # ====================================================================
 
 # Get base64 of background image
